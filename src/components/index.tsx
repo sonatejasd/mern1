@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from 'react'
 
-export const register = () => {
+export const Register = () => {
   const name = useRef(null);
   const rno = useRef(null);
 
@@ -18,7 +18,8 @@ export const register = () => {
           rno: rno.current?.value
         }
       })
-    } )
+    } );
+    console.log(res.json);
   }catch(err) {
     console.log(err);
   }
