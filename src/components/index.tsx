@@ -2,8 +2,8 @@
 import React, { useRef } from 'react'
 
 export const Register = () => {
-  const name = useRef(null);
-  const rno = useRef(null);
+  const name = useRef<HTMLInputElement>(null);
+  const rno = useRef<HTMLInputElement>(null);
 
   const registerStudent = async () => {
     try{
