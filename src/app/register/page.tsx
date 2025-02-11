@@ -1,2 +1,2 @@
-import { register } from '@/components';
-export default register;
+import { Register } from '@/components';
+export default Register;
