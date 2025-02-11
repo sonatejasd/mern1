@@ -7,7 +7,7 @@ export const Register = () => {
 
   const registerStudent = async () => {
     try{
-    const res = await fetch("http://localhost:2020/students/register",{
+    const res = await fetch("https://mern1-server-student.vercel.app//students/register",{
       method: "POST",
       headers: {
         "Content-Type": "application/json"
