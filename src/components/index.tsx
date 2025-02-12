@@ -7,7 +7,7 @@ export const Register = () => {
 
   const registerStudent = async () => {
     try{
-    const res = await fetch("https://mern1-server-student.vercel.app//students/register",{
+    const res = await fetch("https://mern1-server-student.vercel.app/students/register",{
       method: "POST",
       headers: {
         "Content-Type": "application/json", // Set the Content-Type header
@@ -19,7 +19,7 @@ export const Register = () => {
         }
       })
     } );
-    console.log(res.json);
+    //console.log(await res.json);
   }catch(err) {
     console.log(err);
   }
