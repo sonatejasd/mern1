@@ -9,9 +9,6 @@ export const Register = () => {
     try{
     const res = await fetch("https://mern1-server-student.vercel.app//students/register",{
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
       body: JSON.stringify({
         data: {
           name: name.current?.value,
