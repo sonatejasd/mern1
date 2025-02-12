@@ -19,7 +19,8 @@ export const Register = () => {
         }
       })
     } );
-    //console.log(await res.json);
+    const response = await res.json();
+    console.log(response);
   }catch(err) {
     console.log(err);
   }
