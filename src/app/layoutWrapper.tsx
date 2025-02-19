@@ -5,7 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider, useSelector } from "react-redux";
 import { appStore } from "@/redux/store";
 import Login from "./login/page";
-import LayoutWrapper from "./layoutWrapper";
+import Register from "./register/page";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,19 +18,19 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export default function RootLayout({
+export default function LayoutWrapper({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
+  const { isLoggedIn } = useSelector((state:any) => state?.appReducer);
+  console.log(isLoggedIn);
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    
         <Provider store={appStore}>
-          <LayoutWrapper>{children}</LayoutWrapper>
+          {isLoggedIn ? children : <Login />}
         </Provider>
-      </body>
-    </html>
+       
+       
   );
 }
