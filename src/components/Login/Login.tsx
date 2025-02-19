@@ -22,7 +22,7 @@ export const Login = () => {
       const res = await Ajax.post("/users/login", userDetails);
       const result = await res?.json();
       if (result?.message === "Login success") {
-        if(typeof window !== "undefined" && window.sessionStorage){
+        if(typeof window !== "undefined"){
           sessionStorage.setItem("validUser", userName)
         }
         dispatch({
