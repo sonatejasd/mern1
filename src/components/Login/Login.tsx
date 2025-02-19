@@ -22,8 +22,8 @@ export const Login = () => {
       const res = await Ajax.post("/users/login", userDetails);
       const result = await res?.json();
       if (result?.message === "Login success") {
-        if(typeof window?.sessionStorage !== "undefined"){
-          sessionStorage.validUser= userName;
+        if(typeof window !== "undefined" && window.sessionStorage){
+          sessionStorage.setItem("validUser", userName)
         }
         dispatch({
           type: "UPDATE_LOGIN_STATUS",
