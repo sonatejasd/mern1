@@ -1,6 +1,6 @@
 export default class Ajax {
     
-    static baseUrl: any = "https://mern1-server-student.vercel.app";
+    static baseUrl: string = "https://mern1-server-student.vercel.app";
     static async post(path: string, data: object) {
         let response;
         try {

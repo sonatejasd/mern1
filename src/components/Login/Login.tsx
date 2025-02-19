@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, useRef, useState } from "react";
+import React, {useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import Ajax from "@/services/Ajax";
 

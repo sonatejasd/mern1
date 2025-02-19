@@ -2,9 +2,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Provider, useSelector } from "react-redux";
+import { Provider } from "react-redux";
 import { appStore } from "@/redux/store";
-import Login from "./login/page";
 import LayoutWrapper from "./layoutWrapper";
 
 const geistSans = Geist({
