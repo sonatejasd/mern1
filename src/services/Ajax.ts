@@ -2,9 +2,7 @@ export default class Ajax {
     
     static baseUrl: string = "https://mern1-server-student.vercel.app";
     static async post(path: string, data: object) {
-        let response;
-        try {
-            response = await fetch(Ajax.baseUrl+path,
+            let response = await fetch(Ajax.baseUrl+path,
                 {
                     method: "POST",
                     headers: {
@@ -13,12 +11,8 @@ export default class Ajax {
                     body: JSON.stringify(data)
                 }
             );
-        } catch (e: unknown) {
-            if (e instanceof Error) 
-            console.error(e?.message);
-        }
-        finally {
             return response;
-        };
     }
 }
+
+
