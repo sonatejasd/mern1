@@ -13,7 +13,8 @@ export default class Ajax {
                     body: JSON.stringify(data)
                 }
             );
-        } catch (e: any) {
+        } catch (e: unknown) {
+            if (e instanceof Error) 
             console.error(e?.message);
         }
         finally {

@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import Ajax from "@/services/Ajax";
 
 
+
 export const Login = () => {
   const [incorrectCredentials, setFlag] = useState(false);
   const userRef = useRef<HTMLInputElement>(null);
@@ -31,8 +32,12 @@ export const Login = () => {
       } else {
         setFlag(true);
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
+      if(err instanceof Error) {
       console.log(err?.message);
+      } else {
+        console.log("unknown error");
+      }
     }
   };
   const handleLoginChange = () => {
