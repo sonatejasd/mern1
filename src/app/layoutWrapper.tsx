@@ -3,7 +3,13 @@ import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider, useSelector } from "react-redux";
 import { appStore } from "@/redux/store";
-import Login from "./login/page";
+import dynamic from "next/dynamic";
+
+const Login = dynamic (() => import('@/components/Login'), {ssr: false,
+  loading: () => <p>loading...</p>
+})
+
+
 interface AppState{
   appReducer: {
     isLoggedIn: boolean;

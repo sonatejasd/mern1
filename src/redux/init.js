@@ -1,5 +1,5 @@
 
 export const init = {
-    isLoggedIn: typeof window !== "undefined"?false:sessionStorage.validUser,
+    isLoggedIn: false,
     user : '',
 } 

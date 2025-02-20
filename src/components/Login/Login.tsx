@@ -10,9 +10,9 @@ export const Login = () => {
   const userRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const dispatch = useDispatch();
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-  }, []);
+  // useEffect(() => {
+  //   if (typeof window === "undefined") return;
+  // }, []);
   const handleLogin = async () => {
     const userName = userRef.current?.value || '';
     const userDetails = {
@@ -39,7 +39,8 @@ export const Login = () => {
       if(err instanceof Error) {
       console.log(err?.message);
       } else {
-        console.log("unknown error");
+        console.log("unknown error",err);
+        setFlag(true);
       }
     }
   };
