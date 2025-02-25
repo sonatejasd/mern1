@@ -27,7 +27,7 @@ export default function LayoutWrapper({
       if(typeof window !== "undefined" ){
         dispatch({type:"UPDATE_LOGIN_STATUS", payload: sessionStorage.getItem("loggedInUser") ? {isLoggedIn:true}: {isLoggedIn:false}});
       }
-    }, []);
+    }, [dispatch]);
   const { isLoggedIn } = useSelector((state: AppState) => state?.appReducer);
   return (
     

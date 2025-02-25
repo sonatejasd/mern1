@@ -50,7 +50,7 @@ export default class Ajax {
 
     // Generic request method with interceptors
     static async request(method: string, path: string, data?: object) {
-        let options: RequestInit = {
+        const options: RequestInit = {
             method,
             headers: {
                 "Content-Type": "application/json",
