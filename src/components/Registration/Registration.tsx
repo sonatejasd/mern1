@@ -1,4 +1,5 @@
 "use client";
+import Ajax from '@/services/Ajax';
 import React, { useRef } from 'react'
 
 export const Register = () => {
@@ -6,21 +7,32 @@ export const Register = () => {
   const rno = useRef<HTMLInputElement>(null);
 
   const registerStudent = async () => {
+    const data = {data: {
+            name: name.current?.value,
+            rno: rno.current?.value
+          }}
     try{
-    const res = await fetch("https://mern1-server-student.vercel.app/students/register",{
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json", // Set the Content-Type header
-      },
-      body: JSON.stringify({
-        data: {
-          name: name.current?.value,
-          rno: rno.current?.value
-        }
-      })
-    } );
-    const response = await res.json();
-    console.log(response);
+    // const res = await fetch("https://mern1-server-student.vercel.app/students/register",{
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json", // Set the Content-Type header
+    //   },
+    //   body: JSON.stringify({
+    //     data: {
+    //       name: name.current?.value,
+    //       rno: rno.current?.value
+    //     }
+    //   })
+    // } );
+    // const response = await res.json();
+    // console.log(response);
+
+    const res = await Ajax.post("/students/register",data);
+    
+    if(res?.status.includes(`Successfully inserted ${rno.current?.value}`)){
+      alert(`Successfully added student -  ${rno.current?.value}`)
+    }
+
   }catch(err) {
     console.log(err);
   }
