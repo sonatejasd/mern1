@@ -5,7 +5,7 @@ export const Students = () => {
   const [studentList, setStudentList] = useState([]);
   const [currentPg, setCurrentPg] = useState(1);
   const noOfStudents = useRef(0);
-  let noOfStudentsPerPg = 10;
+  const noOfStudentsPerPg = 10;
   const noOfPgs = useRef(0);
   const dispatch = useDispatch();
 
