@@ -30,7 +30,9 @@ export const Register = () => {
     const res = await Ajax.post("/students/register",data);
     
     if(res?.status.includes(`Successfully inserted ${rno.current?.value}`)){
-      alert(`Successfully added student -  ${rno.current?.value}`)
+      alert(`Successfully added student -  ${rno.current?.value}`);
+      name.current!.value = '';
+      rno.current!.value = '';
     }
 
   }catch(err) {

@@ -22,11 +22,9 @@ export default class Ajax {
 
     // Request Interceptor
     static requestInterceptor(path: string, options: RequestInit) {
-        console.log("Request Interceptor:", sessionStorage.getItem("loggedInUser"));
         if(window !== undefined) {
         // Modify request (e.g., add auth token)
         const authToken = sessionStorage.getItem("loggedInUser");
-        
         options.headers = {
             ...options.headers,
             Authorization: authToken ? authToken : "",
@@ -38,7 +36,6 @@ export default class Ajax {
 
     // Response Interceptor
     static async responseInterceptor(response: Response) {
-        console.log("Response Interceptor:", response);
 
         if (!response.ok) {
             const errorData = await response.json();
