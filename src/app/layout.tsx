@@ -1,8 +1,7 @@
 "use client";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 import { Provider } from "react-redux";
 import { appStore } from "@/redux/store";
 import LayoutWrapper from "./layoutWrapper";
@@ -22,7 +21,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
+  if (typeof window !== "undefined") {
+    require("bootstrap/dist/css/bootstrap.min.css");
+    require("bootstrap/dist/js/bootstrap.bundle.min");
+  }
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>

@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { appReducer } from "./reducer";
 import createSagaMiddleware from "redux-saga";
+import rootSaga from "./saga/rootSaga"
 
 import logger from "redux-logger";
 
@@ -15,4 +16,6 @@ export const appStore = configureStore({
     },
     middleware: () => [sagaMiddleware, logger]
 })
+
+sagaMiddleware.run(rootSaga);
 

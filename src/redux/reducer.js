@@ -6,7 +6,9 @@ export const appReducer = (state = init, action) => {
             return {...state, ...action.payload};
         case 'SHOW_EDIT_MODAL': 
             return {...state, ...action.payload};
-        case 'UPDATE_STUDENT' : 
+        case 'STUDENTS':
+            return {...state, students: action.payload};
+        case 'DELETE_STUDENT':
             return {...state, ...action.payload};
         default : return state; 
     }

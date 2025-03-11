@@ -1,8 +1,10 @@
 "use client";
 import Ajax from '@/services/Ajax';
 import React, { useRef } from 'react'
+import { useDispatch } from 'react-redux';
 
 export const Register = () => {
+  const dispatch = useDispatch();
   const name = useRef<HTMLInputElement>(null);
   const rno = useRef<HTMLInputElement>(null);
 
@@ -31,6 +33,7 @@ export const Register = () => {
     
     if(res?.status.includes(`Successfully inserted ${rno.current?.value}`)){
       alert(`Successfully added student -  ${rno.current?.value}`);
+      dispatch({type:"GET_STUDENTS"})
       name.current!.value = '';
       rno.current!.value = '';
     }

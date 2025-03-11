@@ -2,5 +2,7 @@
 export const init = {
     isLoggedIn: false,
     showEditModal : false,
-    student: {}
+    student: {},
+    students: [],
+    showDeleteModal: false,
 } 
